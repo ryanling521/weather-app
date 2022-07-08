@@ -9,14 +9,30 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>This is a weather app!</h1>
+    <h1>Weather App</h1>
 
     <form id="form">
-        <div>
+        <!-- <div>
             <label for="location">Location:</label>
             <input type="text" name="location" id="location" placeholder="City">
+        </div> -->
+
+        <div class="search">
+            <table class="table">
+              <tr>
+                  <td>
+                    <img class="search-icon" src="./images/search.svg" alt="search icon" width="26px">
+                  </td>
+                  <td>
+                    <label for="location"></label>
+                    <input type="search-bar" name="location" id="location" placeholder="City...">
+                  </td>
+              </tr>
+            </table>
         </div>
-        <button id="btn" type="button">Search</button>
+
+
+        <!-- <button id="btn" type="button">Search</button> -->
 
 
     </form>
