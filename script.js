@@ -2,12 +2,16 @@ const body = document.body;
 const form = document.querySelector('#form');
 const button = document.querySelector('#btn');
 const inputLocation = document.querySelector('#location');
+const weatherImage = document.querySelector('#weather-image');
 
 const cityName = document.createElement('div');
 body.append(cityName);
 
 const temperature = document.createElement('div');
 body.append(temperature);
+
+const forecast = document.createElement('div');
+body.append(forecast);
 
 // give city information
 function cityInfo(input) {
@@ -19,14 +23,10 @@ function cityInfo(input) {
         console.log(response);
         cityName.textContent = `City: ${response.name}`;
         temperature.textContent = `Temperature (Fahrenheit): ${response.main.temp}`;
+        forecast.textContent = `Description: ${response.weather[0].description}`;
+        weatherImage.src = `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
     })
 }
-
-// submit with button 
-// button.addEventListener('click', () => {
-//     const location = inputLocation.value;
-//     cityInfo(location);
-// })
 
 // submit with enter
 inputLocation.addEventListener('keypress', (e) => {
